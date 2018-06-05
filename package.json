@@ -1,0 +1,26 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "algorithm practice for interviews",
+  "main": "practice.js",
+  "dependencies": {
+    "jasmine": "^3.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/alfovo/practice.git"
+  },
+  "keywords": [
+    "practice"
+  ],
+  "author": "alfovo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alfovo/practice/issues"
+  },
+  "homepage": "https://github.com/alfovo/practice#readme"
+}
