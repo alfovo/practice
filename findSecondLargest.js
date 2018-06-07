@@ -1,3 +1,5 @@
+var Jasmine = require('jasmine');
+
 class BinaryTreeNode {
   constructor(value) {
     this.value = value;
@@ -57,15 +59,43 @@ function findSecondLargest(treeRoot) {
 
 // Tests
 
-let desc = 'full tree';
-let treeRoot = new BinaryTreeNode(50);
-let leftNode = treeRoot.insertLeft(30);
-leftNode.insertLeft(10);
-leftNode.insertRight(40);
-let rightNode = treeRoot.insertRight(70);
-rightNode.insertLeft(60);
-rightNode.insertRight(80);
-assertEquals(findSecondLargest(treeRoot), 70, desc);
+describe("finds second largest", function() {
+  let treeRoot;
+  let leftNode;
+  let rightNode;
+  
+  it("in a full tree", function() {
+    treeRoot = new BinaryTreeNode(50);
+    leftNode = treeRoot.insertLeft(30);
+    leftNode.insertLeft(10);
+    leftNode.insertRight(40);
+    rightNode = treeRoot.insertRight(70);
+    rightNode.insertLeft(60);
+    rightNode.insertRight(80);
+    expect(findSecondLargest(treeRoot)).toEqual(60);
+  });
+
+  it("when largest has a left child", function() {
+    treeRoot = new BinaryTreeNode(50);
+    leftNode = treeRoot.insertLeft(30);
+    leftNode.insertLeft(10);
+    leftNode.insertRight(40);
+    rightNode = treeRoot.insertRight(70);
+    rightNode.insertLeft(60);
+    expect(findSecondLargest(treeRoot)).toEqual(60);
+  });
+
+});
+
+// let desc = 'full tree';
+// let treeRoot = new BinaryTreeNode(50);
+// let leftNode = treeRoot.insertLeft(30);
+// leftNode.insertLeft(10);
+// leftNode.insertRight(40);
+// let rightNode = treeRoot.insertRight(70);
+// rightNode.insertLeft(60);
+// rightNode.insertRight(80);
+// assertEquals(findSecondLargest(treeRoot), 70, desc);
 
 // desc = 'largest has a left child';
 // treeRoot = new BinaryTreeNode(50);
